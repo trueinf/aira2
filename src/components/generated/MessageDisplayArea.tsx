@@ -31,7 +31,7 @@ export const MessageDisplayArea = ({
   }, [messages, isTyping]);
 
   // @return
-  return <SortableContainer dndKitId="4a50b24a-642f-4d68-a730-522663157d8f" containerType="regular" prevTag="div" className="flex-1 overflow-y-auto px-6 py-4 space-y-4" data-magicpath-id="0" data-magicpath-path="MessageDisplayArea.tsx">
+  return <SortableContainer dndKitId="bfc181d1-d794-4b87-b9a0-83d4e9455f53" containerType="regular" prevTag="div" className="flex-1 overflow-y-auto px-6 py-4 space-y-4" data-magicpath-id="0" data-magicpath-path="MessageDisplayArea.tsx">
       <AnimatePresence data-magicpath-id="1" data-magicpath-path="MessageDisplayArea.tsx">
         {messages.map(message => <motion.div data-magicpath-motion-tag="motion.div" key={message.id} initial={{
         opacity: 0,
@@ -63,18 +63,18 @@ export const MessageDisplayArea = ({
           </motion.div>)}
       </AnimatePresence>
 
-      {isTyping && <SortableContainer dndKitId="0419a145-8db3-4574-8906-cedb56320539" containerType="regular" prevTag="motion.div" initial={{
+      {isTyping && <SortableContainer dndKitId="6c2ed50b-8105-41e8-9134-c0d5d499f52c" containerType="regular" prevTag="motion.div" initial={{
       opacity: 0,
       y: 20
     }} animate={{
       opacity: 1,
       y: 0
     }} className="flex gap-3" data-magicpath-id="10" data-magicpath-path="MessageDisplayArea.tsx">
-          <SortableContainer dndKitId="fff23cdb-5d2b-466c-8a6f-26d8950ba1ff" containerType="regular" prevTag="div" className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center" data-magicpath-id="11" data-magicpath-path="MessageDisplayArea.tsx">
+          <SortableContainer dndKitId="7fdeb58b-c670-41b4-a234-b6870dad696c" containerType="regular" prevTag="div" className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center" data-magicpath-id="11" data-magicpath-path="MessageDisplayArea.tsx">
             <Bot className="w-4 h-4 text-white" data-magicpath-id="12" data-magicpath-path="MessageDisplayArea.tsx" />
           </SortableContainer>
-          <SortableContainer dndKitId="a04324dd-4f49-4b8d-b9ee-dea4018f2dd2" containerType="regular" prevTag="div" className="bg-white/90 px-4 py-3 rounded-2xl rounded-tl-md border border-white/30 shadow-sm" data-magicpath-id="13" data-magicpath-path="MessageDisplayArea.tsx">
-            <SortableContainer dndKitId="70ef3007-1fba-41ea-95ca-da6ecbc86e48" containerType="regular" prevTag="div" className="flex gap-1" data-magicpath-id="14" data-magicpath-path="MessageDisplayArea.tsx">
+          <SortableContainer dndKitId="33075d48-29a8-432b-9b62-c4e803f9ec7d" containerType="regular" prevTag="div" className="bg-white/90 px-4 py-3 rounded-2xl rounded-tl-md border border-white/30 shadow-sm" data-magicpath-id="13" data-magicpath-path="MessageDisplayArea.tsx">
+            <SortableContainer dndKitId="5f6b2467-1f17-4e6c-b925-451ba8bc9921" containerType="regular" prevTag="div" className="flex gap-1" data-magicpath-id="14" data-magicpath-path="MessageDisplayArea.tsx">
               <motion.div data-magicpath-motion-tag="motion.div" className="w-2 h-2 bg-slate-400 rounded-full" animate={{
             scale: [1, 1.2, 1]
           }} transition={{
