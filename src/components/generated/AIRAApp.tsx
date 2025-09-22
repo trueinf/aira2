@@ -18,7 +18,7 @@ export const AIRAApp = () => {
     text: "Hello, I'm AIRA 2.0. I'm here to provide a safe, supportive space for you to share whatever is on your mind. How are you feeling today?",
     sender: 'bot',
     timestamp: new Date(),
-    mpid: "96930829-6b0c-4b66-bc2e-b5617a79bdc4"
+    mpid: "0a1fa58b-7764-48d8-bdb7-24a7a3c547fd"
   }]);
   const [inputText, setInputText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -65,13 +65,13 @@ export const AIRAApp = () => {
   };
 
   // @return
-  return <SortableContainer dndKitId="1bfd8fae-d4f7-4e63-8e4b-7cb96f7f3091" containerType="regular" prevTag="div" className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50" data-magicpath-id="0" data-magicpath-path="AIRAApp.tsx">
+  return <SortableContainer dndKitId="652247d1-7778-4cbd-90a2-3e5affc0be81" containerType="regular" prevTag="div" className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50" data-magicpath-id="0" data-magicpath-path="AIRAApp.tsx">
       {/* Therapeutic Motion Background */}
       <TherapeuticMotionBackground data-magicpath-id="1" data-magicpath-path="AIRAApp.tsx" />
 
       {/* Main Chat Interface */}
-      <SortableContainer dndKitId="085ced14-0868-4a8b-b56c-c6a022625021" containerType="regular" prevTag="div" className="relative z-10 flex min-h-screen items-center justify-center p-4" data-magicpath-id="2" data-magicpath-path="AIRAApp.tsx">
-        <SortableContainer dndKitId="1e3b4c5a-6140-49ea-850c-1d9ebf4e7c1a" containerType="regular" prevTag="motion.div" initial={{
+      <SortableContainer dndKitId="0695cd20-8c56-4f7d-b294-eb2b5a997d1e" containerType="regular" prevTag="div" className="relative z-10 flex min-h-screen items-center justify-center p-4" data-magicpath-id="2" data-magicpath-path="AIRAApp.tsx">
+        <SortableContainer dndKitId="1ad3e76b-996e-49ed-a7dd-5a0b23c896d9" containerType="regular" prevTag="motion.div" initial={{
         opacity: 0,
         scale: 0.95
       }} animate={{
@@ -82,12 +82,12 @@ export const AIRAApp = () => {
         ease: "easeOut"
       }} className="w-full max-w-4xl h-[90vh] bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/20 flex flex-col overflow-hidden" data-magicpath-id="3" data-magicpath-path="AIRAApp.tsx">
           {/* Header */}
-          <SortableContainer dndKitId="787c3529-72eb-4c90-a631-7dcfc510706a" containerType="regular" prevTag="div" className="px-8 py-6 bg-gradient-to-r from-indigo-50/50 to-purple-50/50 border-b border-white/30" data-magicpath-id="4" data-magicpath-path="AIRAApp.tsx">
-            <SortableContainer dndKitId="efb355d0-111a-42a3-b3d1-e8bf82751149" containerType="regular" prevTag="div" className="flex items-center gap-3" data-magicpath-id="5" data-magicpath-path="AIRAApp.tsx">
-              <SortableContainer dndKitId="0946f269-9a90-4f71-922f-044fdf22fa39" containerType="regular" prevTag="div" className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl flex items-center justify-center" data-magicpath-id="6" data-magicpath-path="AIRAApp.tsx">
+          <SortableContainer dndKitId="3a30db8f-9015-458d-9ade-3f396fd1fc17" containerType="regular" prevTag="div" className="px-8 py-6 bg-gradient-to-r from-indigo-50/50 to-purple-50/50 border-b border-white/30" data-magicpath-id="4" data-magicpath-path="AIRAApp.tsx">
+            <SortableContainer dndKitId="c03a9eb9-3734-4f74-bce7-c314a983228b" containerType="regular" prevTag="div" className="flex items-center gap-3" data-magicpath-id="5" data-magicpath-path="AIRAApp.tsx">
+              <SortableContainer dndKitId="892ab2e4-9aa0-41c6-b233-bebd3d900118" containerType="regular" prevTag="div" className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl flex items-center justify-center" data-magicpath-id="6" data-magicpath-path="AIRAApp.tsx">
                 <Bot className="w-6 h-6 text-white" data-magicpath-id="7" data-magicpath-path="AIRAApp.tsx" />
               </SortableContainer>
-              <SortableContainer dndKitId="315f060c-dbca-4528-95c5-a2595c059fd0" containerType="regular" prevTag="div" data-magicpath-id="8" data-magicpath-path="AIRAApp.tsx">
+              <SortableContainer dndKitId="ee09879f-6ed4-48e2-8b9f-5086e582d1a3" containerType="regular" prevTag="div" data-magicpath-id="8" data-magicpath-path="AIRAApp.tsx">
                 <h1 className="text-2xl font-bold text-slate-800" data-magicpath-id="9" data-magicpath-path="AIRAApp.tsx">AIRA 2.0</h1>
                 <p className="text-sm text-slate-600" data-magicpath-id="10" data-magicpath-path="AIRAApp.tsx">Your supportive AI companion</p>
               </SortableContainer>
@@ -95,7 +95,7 @@ export const AIRAApp = () => {
           </SortableContainer>
 
           {/* Messages Area */}
-          <SortableContainer dndKitId="2b7c628e-5367-4ce8-a2ab-5d68f17492a3" containerType="regular" prevTag="div" className="flex-1 overflow-y-auto px-6 py-4 space-y-4" data-magicpath-id="11" data-magicpath-path="AIRAApp.tsx">
+          <SortableContainer dndKitId="295b89d0-eecc-4bed-98d5-8a2b6214dd3a" containerType="regular" prevTag="div" className="flex-1 overflow-y-auto px-6 py-4 space-y-4" data-magicpath-id="11" data-magicpath-path="AIRAApp.tsx">
             <AnimatePresence data-magicpath-id="12" data-magicpath-path="AIRAApp.tsx">
               {messages.map(message => <motion.div data-magicpath-motion-tag="motion.div" key={message.id} initial={{
               opacity: 0,
@@ -127,18 +127,18 @@ export const AIRAApp = () => {
                 </motion.div>)}
             </AnimatePresence>
 
-            {isTyping && <SortableContainer dndKitId="70539f5b-5015-4ce4-83cb-20ac77e57a48" containerType="regular" prevTag="motion.div" initial={{
+            {isTyping && <SortableContainer dndKitId="7eab694d-e87c-4785-ad7e-d6faf615af17" containerType="regular" prevTag="motion.div" initial={{
             opacity: 0,
             y: 20
           }} animate={{
             opacity: 1,
             y: 0
           }} className="flex gap-3" data-magicpath-id="21" data-magicpath-path="AIRAApp.tsx">
-                <SortableContainer dndKitId="ffd72647-9290-4e88-a36a-4c05b168b966" containerType="regular" prevTag="div" className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center" data-magicpath-id="22" data-magicpath-path="AIRAApp.tsx">
+                <SortableContainer dndKitId="c49f1834-f653-4eb2-9de0-d265123d92e1" containerType="regular" prevTag="div" className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-500 flex items-center justify-center" data-magicpath-id="22" data-magicpath-path="AIRAApp.tsx">
                   <Bot className="w-4 h-4 text-white" data-magicpath-id="23" data-magicpath-path="AIRAApp.tsx" />
                 </SortableContainer>
-                <SortableContainer dndKitId="f5318471-f514-4a82-b43a-f80875436333" containerType="regular" prevTag="div" className="bg-white/90 px-4 py-3 rounded-2xl rounded-tl-md border border-white/30 shadow-sm" data-magicpath-id="24" data-magicpath-path="AIRAApp.tsx">
-                  <SortableContainer dndKitId="419625c5-4dd1-4dcb-b83d-099cb97bb1d2" containerType="regular" prevTag="div" className="flex gap-1" data-magicpath-id="25" data-magicpath-path="AIRAApp.tsx">
+                <SortableContainer dndKitId="d1084a65-b00d-4902-b1eb-a1c11aca7eea" containerType="regular" prevTag="div" className="bg-white/90 px-4 py-3 rounded-2xl rounded-tl-md border border-white/30 shadow-sm" data-magicpath-id="24" data-magicpath-path="AIRAApp.tsx">
+                  <SortableContainer dndKitId="a8cf4ddf-6242-46cd-aed2-b48a3bad422c" containerType="regular" prevTag="div" className="flex gap-1" data-magicpath-id="25" data-magicpath-path="AIRAApp.tsx">
                     <motion.div data-magicpath-motion-tag="motion.div" className="w-2 h-2 bg-slate-400 rounded-full" animate={{
                   scale: [1, 1.2, 1]
                 }} transition={{
@@ -167,12 +167,12 @@ export const AIRAApp = () => {
           </SortableContainer>
 
           {/* Input Area */}
-          <SortableContainer dndKitId="4b5aa603-beb3-4859-9b0f-02151247d2a1" containerType="regular" prevTag="div" className="p-6 bg-gradient-to-r from-indigo-50/30 to-purple-50/30 border-t border-white/30" data-magicpath-id="30" data-magicpath-path="AIRAApp.tsx">
-            <SortableContainer dndKitId="f1579bbd-2ce3-44df-a6f1-d37cd511a2be" containerType="regular" prevTag="div" className="flex gap-3 items-end" data-magicpath-id="31" data-magicpath-path="AIRAApp.tsx">
-              <SortableContainer dndKitId="e27f5272-1271-46e1-a44e-c644ddfd1d5c" containerType="regular" prevTag="div" className="flex-1" data-magicpath-id="32" data-magicpath-path="AIRAApp.tsx">
+          <SortableContainer dndKitId="7074f5ed-1d83-4b17-a5de-1aa92891c38a" containerType="regular" prevTag="div" className="p-6 bg-gradient-to-r from-indigo-50/30 to-purple-50/30 border-t border-white/30" data-magicpath-id="30" data-magicpath-path="AIRAApp.tsx">
+            <SortableContainer dndKitId="e3253dd7-8e76-49c2-b74e-fe5851a50c8d" containerType="regular" prevTag="div" className="flex gap-3 items-end" data-magicpath-id="31" data-magicpath-path="AIRAApp.tsx">
+              <SortableContainer dndKitId="c191d557-ec68-41cb-9716-fc2b8e366b75" containerType="regular" prevTag="div" className="flex-1" data-magicpath-id="32" data-magicpath-path="AIRAApp.tsx">
                 <textarea value={inputText} onChange={e => setInputText(e.target.value)} onKeyPress={handleKeyPress} placeholder="Share what's on your mind... I'm here to listen." className="w-full px-4 py-3 bg-white/90 border border-white/30 rounded-2xl resize-none focus:outline-none focus:ring-2 focus:ring-indigo-400/50 focus:border-indigo-400/50 text-slate-800 placeholder-slate-500 shadow-sm" rows={2} disabled={isTyping} data-magicpath-id="33" data-magicpath-path="AIRAApp.tsx" />
               </SortableContainer>
-              <SortableContainer dndKitId="578ddff9-76d0-4548-984e-97135f210db1" containerType="regular" prevTag="motion.button" onClick={handleSendMessage} disabled={inputText.trim() === '' || isTyping} whileHover={{
+              <SortableContainer dndKitId="a5533e07-0868-4464-9e80-c61f84853041" containerType="regular" prevTag="motion.button" onClick={handleSendMessage} disabled={inputText.trim() === '' || isTyping} whileHover={{
               scale: 1.05
             }} whileTap={{
               scale: 0.95

@@ -9,35 +9,35 @@ export const TherapeuticMotionBackground = () => {
     size: 400,
     delay: 0,
     duration: 25,
-    mpid: "80290b01-8eb4-49c4-a672-db1516a4c71b"
+    mpid: "1d17a267-e532-4942-9134-126b2e4d3d20"
   }, {
     id: 2,
     size: 300,
     delay: 5,
     duration: 30,
-    mpid: "e77bed54-67a9-4bc6-844c-619c95b19dd7"
+    mpid: "5ce7371a-92c6-432b-9f5f-aa298468249a"
   }, {
     id: 3,
     size: 350,
     delay: 10,
     duration: 28,
-    mpid: "6c8ca57e-0629-40e8-a5f6-686df4acc1fc"
+    mpid: "1bae2ea5-506f-4093-86ac-055eb1a2ba53"
   }, {
     id: 4,
     size: 250,
     delay: 15,
     duration: 32,
-    mpid: "a5beb117-743f-4672-b9b9-73359979da2c"
+    mpid: "56e93c79-07e9-4919-90eb-3cf21000b9db"
   }, {
     id: 5,
     size: 200,
     delay: 8,
     duration: 35,
-    mpid: "372a4be3-7124-4bc3-92f8-a2a6ac6ecf66"
+    mpid: "bf1121ed-3d37-4023-8f14-6eb998fbf537"
   }] as any[];
 
   // @return
-  return <SortableContainer dndKitId="454251d7-de42-4b3f-81af-cbd0ee1b8422" containerType="collection" prevTag="div" className="fixed inset-0 z-0 overflow-hidden" data-magicpath-id="0" data-magicpath-path="TherapeuticMotionBackground.tsx">
+  return <SortableContainer dndKitId="6cd7c6e4-e60e-4698-abc8-02436ddba40e" containerType="collection" prevTag="div" className="fixed inset-0 z-0 overflow-hidden" data-magicpath-id="0" data-magicpath-path="TherapeuticMotionBackground.tsx">
       {/* Base gradient layer */}
       <motion.div data-magicpath-motion-tag="motion.div" className="absolute inset-0" animate={{
       background: ['linear-gradient(45deg, #f0f4ff 0%, #e0f2fe 25%, #f0f9ff 50%, #faf5ff 75%, #f0f4ff 100%)', 'linear-gradient(135deg, #f0f9ff 0%, #faf5ff 25%, #f0f4ff 50%, #e0f2fe 75%, #f0f9ff 100%)', 'linear-gradient(225deg, #faf5ff 0%, #f0f4ff 25%, #e0f2fe 50%, #f0f9ff 75%, #faf5ff 100%)', 'linear-gradient(315deg, #e0f2fe 0%, #f0f9ff 25%, #faf5ff 50%, #f0f4ff 75%, #e0f2fe 100%)']
