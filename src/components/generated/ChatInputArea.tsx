@@ -20,12 +20,12 @@ export const ChatInputArea = ({
   isTyping
 }: ChatInputAreaProps) => {
   // @return
-  return <SortableContainer dndKitId="d78a48bb-13a2-42e1-85b6-9a619b939e52" containerType="regular" prevTag="div" className="p-6 bg-gradient-to-r from-indigo-50/30 to-purple-50/30 border-t border-white/30" data-magicpath-id="0" data-magicpath-path="ChatInputArea.tsx">
-      <SortableContainer dndKitId="dc3a9698-f010-4970-a846-0d017396a0ba" containerType="regular" prevTag="div" className="flex gap-3 items-end" data-magicpath-id="1" data-magicpath-path="ChatInputArea.tsx">
-        <SortableContainer dndKitId="d7db7510-ee33-47af-a3c8-9e4d1953e34e" containerType="regular" prevTag="div" className="flex-1" data-magicpath-id="2" data-magicpath-path="ChatInputArea.tsx">
+  return <SortableContainer dndKitId="31fef7ad-98a5-426c-a2a2-a4ccd41e60e8" containerType="regular" prevTag="div" className="p-6 bg-gradient-to-r from-indigo-50/30 to-purple-50/30 border-t border-white/30" data-magicpath-id="0" data-magicpath-path="ChatInputArea.tsx">
+      <SortableContainer dndKitId="1bfdfdee-0642-41ae-a94f-1ed895969815" containerType="regular" prevTag="div" className="flex gap-3 items-end" data-magicpath-id="1" data-magicpath-path="ChatInputArea.tsx">
+        <SortableContainer dndKitId="4d8dc17c-b26b-4314-a7b5-bf2d53501563" containerType="regular" prevTag="div" className="flex-1" data-magicpath-id="2" data-magicpath-path="ChatInputArea.tsx">
           <textarea value={inputText} onChange={e => setInputText(e.target.value)} onKeyPress={onKeyPress} placeholder="Share what's on your mind... I'm here to listen." className="w-full px-4 py-3 bg-white/90 border border-white/30 rounded-2xl resize-none focus:outline-none focus:ring-2 focus:ring-indigo-400/50 focus:border-indigo-400/50 text-slate-800 placeholder-slate-500 shadow-sm transition-all duration-200" rows={2} disabled={isTyping} aria-label="Type your message" data-magicpath-id="3" data-magicpath-path="ChatInputArea.tsx" />
         </SortableContainer>
-        <SortableContainer dndKitId="f071ba86-e6b5-4c84-9478-37d72a06c9a8" containerType="regular" prevTag="motion.button" onClick={onSendMessage} disabled={inputText.trim() === '' || isTyping} whileHover={{
+        <SortableContainer dndKitId="2fbab28f-a0fe-4e43-9957-d94e3c00e496" containerType="regular" prevTag="motion.button" onClick={onSendMessage} disabled={inputText.trim() === '' || isTyping} whileHover={{
         scale: 1.05
       }} whileTap={{
         scale: 0.95
