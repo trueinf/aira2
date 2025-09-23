@@ -2,12 +2,16 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Bot, User } from 'lucide-react';
 import { TherapeuticMotionBackground } from './TherapeuticMotionBackground';
+import { getAssistantResponse } from '@/lib/openai';
 interface Message {
   id: string;
   text: string;
   sender: 'user' | 'bot';
   timestamp: Date;
+  isError?: boolean;
 }
+
+const systemPrompt = "You are AIRA 2.0, a compassionate mental health companion. Offer supportive, empathetic responses. Encourage reflection, ask gentle follow up questions, and avoid providing medical diagnoses.";
 
 // @component: AIRAApp
 export const AIRAApp = () => {
@@ -19,6 +23,7 @@ export const AIRAApp = () => {
   }]);
   const [inputText, setInputText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({
@@ -28,31 +33,57 @@ export const AIRAApp = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
-  const botResponses = ["I hear you, and I want you to know that your feelings are valid. Can you tell me more about what's troubling you?", "Thank you for sharing that with me. It takes courage to open up about difficult experiences. How has this been affecting you?", "I'm here to listen without judgment. Your experience matters, and you deserve support. What would be most helpful for you right now?", "It sounds like you're going through something really challenging. Remember that you're not alone in this. How can we work through this together?", "I appreciate you trusting me with this. Sometimes just expressing these feelings can be a step toward healing. How are you taking care of yourself?", "Your strength in sharing this is remarkable. It's okay to feel overwhelmed. What support systems do you have around you?"];
   const handleSendMessage = async () => {
-    if (inputText.trim() === '') return;
+    if (inputText.trim() === '' || isTyping) return;
     const userMessage: Message = {
       id: Date.now().toString(),
-      text: inputText,
+      text: inputText.trim(),
       sender: 'user',
       timestamp: new Date()
     };
-    setMessages(prev => [...prev, userMessage]);
+
+    const updatedMessages = [...messages, userMessage];
+    setMessages(updatedMessages);
     setInputText('');
     setIsTyping(true);
+    setError(null);
 
-    // Simulate bot thinking time
-    setTimeout(() => {
-      const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
+    try {
+      const chatHistory = [
+        { role: 'system' as const, content: systemPrompt },
+        ...updatedMessages.map(message => ({
+          role: message.sender === 'user' ? ('user' as const) : ('assistant' as const),
+          content: message.text,
+          type: 'message' as const
+        }))
+      ];
+
+      const aiResponse = await getAssistantResponse(chatHistory);
+
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: randomResponse,
+        text: aiResponse,
         sender: 'bot',
         timestamp: new Date()
       };
+
       setMessages(prev => [...prev, botMessage]);
+    } catch (err) {
+      console.error(err);
+
+      const fallbackText = 'I ran into a problem reaching the assistant. Please try again in a moment.';
+      setError(err instanceof Error ? err.message : 'Something went wrong while contacting the assistant.');
+      const errorMessage: Message = {
+        id: (Date.now() + 2).toString(),
+        text: fallbackText,
+        sender: 'bot',
+        timestamp: new Date(),
+        isError: true
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
       setIsTyping(false);
-    }, 1500 + Math.random() * 2000);
+    }
   };
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -63,6 +94,11 @@ export const AIRAApp = () => {
 
   // @return
   return <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      {/* ElevenLabs ConvAI Widget */}
+      {React.createElement('elevenlabs-convai', {
+      'agent-id': 'agent_3401k5bjyyy1f588tky6qa4pns45'
+    })}
+
       {/* Therapeutic Motion Background */}
       <TherapeuticMotionBackground />
 
@@ -111,7 +147,7 @@ export const AIRAApp = () => {
                     {message.sender === 'user' ? <User className="w-4 h-4 text-white" /> : <Bot className="w-4 h-4 text-white" />}
                   </div>
                   <div className={`max-w-[70%] ${message.sender === 'user' ? 'text-right' : 'text-left'}`}>
-                    <div className={`px-4 py-3 rounded-2xl ${message.sender === 'user' ? 'bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-tr-md' : 'bg-white/90 text-slate-800 rounded-tl-md border border-white/30 shadow-sm'}`}>
+                    <div className={`px-4 py-3 rounded-2xl ${message.sender === 'user' ? 'bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-tr-md' : message.isError ? 'bg-red-50 text-red-700 border border-red-200 rounded-tl-md shadow-sm' : 'bg-white/90 text-slate-800 rounded-tl-md border border-white/30 shadow-sm'}`}>
                       <p className="text-sm leading-relaxed">{message.text}</p>
                     </div>
                     <span className="text-xs text-slate-500 mt-1 block">
@@ -164,7 +200,10 @@ export const AIRAApp = () => {
           </div>
 
           {/* Input Area */}
-          <div className="p-6 bg-gradient-to-r from-indigo-50/30 to-purple-50/30 border-t border-white/30">
+          <div className="p-6 bg-gradient-to-r from-indigo-50/30 to-purple-50/30 border-t border-white/30 space-y-3">
+            {error && <div className="px-4 py-3 rounded-xl bg-red-50 border border-red-200 text-sm text-red-700">
+                {error}
+              </div>}
             <div className="flex gap-3 items-end">
               <div className="flex-1">
                 <textarea value={inputText} onChange={e => setInputText(e.target.value)} onKeyPress={handleKeyPress} placeholder="Share what's on your mind... I'm here to listen." className="w-full px-4 py-3 bg-white/90 border border-white/30 rounded-2xl resize-none focus:outline-none focus:ring-2 focus:ring-indigo-400/50 focus:border-indigo-400/50 text-slate-800 placeholder-slate-500 shadow-sm" rows={2} disabled={isTyping} />
