@@ -31,23 +31,17 @@ const getClient = () => {
 export const getAssistantResponse = async (history: ChatMessageInput[]) => {
   const client = getClient();
 
-  const response = await client.responses.create({
-    model: 'gpt-5',
-    input: history,
+  const response = await client.chat.completions.create({
+    model: 'gpt-3.5-turbo',
+    messages: history,
+    max_tokens: 1000,
+    temperature: 0.7,
   });
 
-  if (response.output_text && response.output_text.trim().length > 0) {
-    return response.output_text.trim();
-  }
-
-  const textSegments = (response.output as Array<any> | undefined)
-    ?.flatMap(item => item?.content ?? [])
-    ?.filter((part: any) => typeof part?.text === 'string')
-    ?.map((part: any) => part.text.trim())
-    ?.filter(Boolean);
-
-  if (textSegments && textSegments.length > 0) {
-    return textSegments.join('\n');
+  const message = response.choices[0]?.message?.content;
+  
+  if (message && message.trim().length > 0) {
+    return message.trim();
   }
 
   throw new Error('No textual response returned from the model.');
